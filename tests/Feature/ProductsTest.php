@@ -14,16 +14,27 @@ class ProductsTest extends TestCase
     /** @test * */
     function user_can_see_products_on_main_page()
     {
-        $this->withoutExceptionHandling();
-
         $product1 = factory(Product::class)->create();
         $product2 = factory(Product::class)->create();
 
-        $this->get('/')
+        $this->get('/products')
             ->assertOk()
             ->assertSee($product1->title)
-            ->assertSee($product1->price / 100)
+            ->assertSee($product1->price)
             ->assertSee($product2->title)
-            ->assertSee($product2->price / 100);
+            ->assertSee($product2->price);
+    }
+
+    /** @test * */
+    function user_can_see_product_page()
+    {
+        $this->withoutExceptionHandling();
+        $product = factory(Product::class)->create();
+
+        $this->get($product->path())
+            ->assertOk()
+            ->assertSee($product->title)
+            ->assertSee($product->description)
+            ->assertSee($product->price);
     }
 }
