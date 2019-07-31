@@ -12,8 +12,14 @@
 */
 
 Route::get('/products', 'ProductsController@index');
+Route::post('/products', 'ProductsController@store');
 Route::get('/products/{product}', 'ProductsController@show');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix' => 'admin'], function () {
+//    Route::get('/', '');
+});
