@@ -17,13 +17,36 @@ class ProductsTest extends TestCase
     /** @test * */
     function product_can_be_added()
     {
-        $attributes = factory(Product::class)
-            ->raw([
-                'image' => new UploadedFile(resource_path('test-files/Denis.jpg'),
-                    'Denis.jpg', null, null, null, true)]);
+        $attributes = factory(Product::class)->raw(['image' => $this->generateImage()]);
 
         $this->post('admin/products', $attributes);
         $this->assertDatabaseHas('products', Arr::except($attributes, 'image'));
+    }
+
+    /** @test * */
+    function product_can_be_updated()
+    {
+        $product = factory(Product::class)->create();
+
+        $this->patch("/admin/{$product->path()}", $params = [
+            'title' => 'Changed!',
+            'description' => 'Updated!',
+            'price' => 2000,
+            'image' => $this->generateImage()
+        ]);
+
+        $this->assertDatabaseHas('products', $params);
+    }
+
+    /** @test * */
+    function product_can_be_deleted()
+    {
+        $this->withoutExceptionHandling();
+        $product = factory(Product::class)->create();
+
+        $this->delete("/admin/{$product->path()}");
+
+        $this->assertCount(0, Product::all());
     }
 
     /** @test * */
@@ -36,5 +59,11 @@ class ProductsTest extends TestCase
             ->assertOk()
             ->assertSee($product1->title)
             ->assertSee($product2->title);
+    }
+
+    public function generateImage()
+    {
+        return new UploadedFile(resource_path('test-files/Denis.jpg'),
+            'Denis.jpg', null, null, null, true);
     }
 }

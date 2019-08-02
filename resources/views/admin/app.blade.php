@@ -22,15 +22,15 @@
 <body>
 <div id="app">
     @include('layouts.navbar')
-    <main class="py-4 container mx-auto">
-        <div class="w-3/4 mx-auto flex">
-            <div class="w-1/6 text-left">
-                <a href="/admin/products"><div class="py-3 hover:bg-gray-100 pl-3">Products</div></a>
-                <a href="#"><div class="py-3 pl-3">Stuff</div></a>
-                <a href="#"><div class="py-3 pl-3">Stuff</div></a>
-                <a href="#"><div class="py-3 pl-3">Stuff</div></a>
+    <main class="">
+        <div class="flex h-screen">
+            <div class="w-1/6 text-left text-lighttext bg-darker">
+                <a href="/admin/products"><div class="py-4 hover:bg-darkerhover pl-5">Products</div></a>
+                <a href="#"><div class="py-4 pl-5">Stuff</div></a>
+                <a href="#"><div class="py-4 pl-5">Stuff</div></a>
+                <a href="#"><div class="py-4 pl-5">Stuff</div></a>
             </div>
-            <div class="w-5/6 p-5 border-l-2 bg-gray-100">
+            <div class="w-5/6 h-full p-5 border-l-2 bg-gray-100">
                 @yield('content')
             </div>
         </div>

@@ -22,8 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index');
     Route::group(['prefix' => 'products'], function() {
-        Route::get('/', 'Admin\ProductsController@index');
+        Route::get('/', 'Admin\ProductsController@index')->name('admin-list-products');
         Route::post('/', 'Admin\ProductsController@store');
+        Route::get('{product}/edit', 'Admin\ProductsController@edit');
+        Route::patch('{product}', 'Admin\ProductsController@update');
+        Route::delete('{product}', 'Admin\ProductsController@destroy');
         Route::get('/create', 'Admin\ProductsController@create')->name('create-product');
     });
 });

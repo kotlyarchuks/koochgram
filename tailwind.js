@@ -14,6 +14,10 @@ module.exports = {
 
       main: '#3897F0',
       maintext: '#262626',
+      lighttext: '#b6c5cc',
+      darkest: '#1a2226',
+      darker: '#222d32',
+      darkerhover: '#36464b',
 
       black: '#000',
       white: '#fff',

@@ -10,7 +10,7 @@ class Product extends Model
 
     public function path()
     {
-        return "/products/{$this->id}";
+        return "products/{$this->id}";
     }
 
     public function getPriceAttribute($value)

@@ -15,7 +15,7 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                     Description
                 </label>
-                <textarea class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" required>Description</textarea>
+                <textarea class="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="description" name="description" rows="5" required></textarea>
             </div>
             <div class="mb-4 w-1/2">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
