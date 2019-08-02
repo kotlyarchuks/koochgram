@@ -17,20 +17,4 @@ class ProductsController extends Controller
     {
         return view('products.show', compact('product'));
     }
-
-    public function store(Request $request)
-    {
-        $data = request()->validate([
-            'title' => 'required|unique:products',
-            'description' => 'required',
-            'price' => 'required|integer',
-            'image' => 'image'
-        ]);
-
-        $data['image'] = request()->file('image')->store('products');
-
-        Product::create($data);
-
-        return back();
-    }
 }

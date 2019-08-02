@@ -17,13 +17,24 @@ class ProductsTest extends TestCase
     /** @test * */
     function product_can_be_added()
     {
-        $this->withoutExceptionHandling();
         $attributes = factory(Product::class)
             ->raw([
                 'image' => new UploadedFile(resource_path('test-files/Denis.jpg'),
                     'Denis.jpg', null, null, null, true)]);
 
-        $this->post('/products', $attributes);
+        $this->post('admin/products', $attributes);
         $this->assertDatabaseHas('products', Arr::except($attributes, 'image'));
+    }
+
+    /** @test * */
+    function can_view_list_of_all_products()
+    {
+        $product1 = factory(Product::class)->create();
+        $product2 = factory(Product::class)->create();
+
+        $this->get('/admin/products')
+            ->assertOk()
+            ->assertSee($product1->title)
+            ->assertSee($product2->title);
     }
 }

@@ -28,7 +28,7 @@
         @foreach($products as $product)
             <div class="product_card w-1/4 p-3 text-center">
                 <a href="{{ $product->path() }}">
-                    <img src="{{ $product->image }}" alt="" class="pb-2">
+                    <img src="/storage/{{ $product->image }}" alt="" class="pb-2">
                     <h4>{{ $product->title }}</h4>
                     <div> {{ $product->price }}</div>
                 </a>

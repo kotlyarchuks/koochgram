@@ -12,7 +12,6 @@
 */
 
 Route::get('/products', 'ProductsController@index');
-Route::post('/products', 'ProductsController@store');
 Route::get('/products/{product}', 'ProductsController@show');
 
 Auth::routes();
@@ -21,5 +20,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {
-//    Route::get('/', '');
+    Route::get('/', 'Admin\HomeController@index');
+    Route::group(['prefix' => 'products'], function() {
+        Route::get('/', 'Admin\ProductsController@index');
+        Route::post('/', 'Admin\ProductsController@store');
+        Route::get('/create', 'Admin\ProductsController@create')->name('create-product');
+    });
 });
