@@ -24,6 +24,6 @@ class ProductTest extends TestCase
     {
         $product = factory(Product::class)->create();
 
-        $this->assertEquals("/products/{$product->id}", $product->path());
+        $this->assertEquals("products/{$product->id}", $product->path());
     }
 }

@@ -31,8 +31,7 @@ class ProductsTest extends TestCase
         $this->patch("/admin/{$product->path()}", $params = [
             'title' => 'Changed!',
             'description' => 'Updated!',
-            'price' => 2000,
-            'image' => $this->generateImage()
+            'price' => 2000
         ]);
 
         $this->assertDatabaseHas('products', $params);
