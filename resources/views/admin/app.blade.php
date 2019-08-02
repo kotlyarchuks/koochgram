@@ -24,8 +24,13 @@
     @include('layouts.navbar')
     <main class="">
         <div class="flex h-screen">
-            <div class="w-1/6 text-left text-lighttext bg-darker">
-                <a href="/admin/products"><div class="py-4 hover:bg-darkerhover pl-5">Products</div></a>
+            <div class="w-1/6 text-left text-maintext font-bold bg-gray-200">
+                <a href="/admin/products">
+                    <div class="py-4 hover:bg-gray-300 pl-5 flex">
+                        <img src="https://img.icons8.com/ios-glyphs/30/e98074/product.png" class="w-5 mr-5">
+                        Products
+                    </div>
+                </a>
                 <a href="#"><div class="py-4 pl-5">Stuff</div></a>
                 <a href="#"><div class="py-4 pl-5">Stuff</div></a>
                 <a href="#"><div class="py-4 pl-5">Stuff</div></a>

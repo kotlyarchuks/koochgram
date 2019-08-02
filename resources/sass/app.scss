@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 //Tailwind
 @tailwind base;
@@ -9,10 +10,18 @@
 @tailwind utilities;
 
 .button {
-  @apply .px-3 .py-1 .text-white .bg-main;
+  @apply .px-3 .py-1 .text-white .bg-accent;
   border-radius: 5px;
 
   &:hover {
     text-underline: none
   }
+}
+
+
+.slider {
+  @apply .w-full;
+  height: 800px;
+  background: url('../images/slider.jpg') no-repeat;
+  font-family: Lato, sans-serif;
 }

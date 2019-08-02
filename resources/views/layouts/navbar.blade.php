@@ -1,11 +1,11 @@
-<nav class="py-4 bg-gray-200">
+<nav class="py-4 bg-main">
     <div class="container mx-auto flex justify-between items-center">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="images/logo.png" alt="" class="h-12">
         </a>
 
         <form action="" class="search">
-            <input type="text" class="w-full text-xs py-1 px-5 bg-gray-300 border-1 border-gray-100" placeholder="Search">
+            <input type="text" class="w-full text-xs py-1 px-5 bg-white border-1 border-gray-100" placeholder="Search">
         </form>
 
         <ul class="flex items-center">
@@ -16,7 +16,7 @@
                 </li>
                 @if (Route::has('register'))
                     <li>
-                        <a class="text-main font-bold hover:no-underline"
+                        <a class="text-accent font-bold hover:no-underline"
                            href="{{ route('register') }}">{{ __('Sign Up') }}</a>
                     </li>
                 @endif

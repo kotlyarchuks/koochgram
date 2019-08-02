@@ -31,7 +31,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button href="#" onclick="this.form.submit()" class="">
-                                    <img src="https://img.icons8.com/ios-glyphs/30/fa314a/trash.png" class="w-5">
+                                    <img src="https://img.icons8.com/ios-glyphs/30/e98074/trash.png" class="w-5">
                                 </button>
                             </form>
                         </td>

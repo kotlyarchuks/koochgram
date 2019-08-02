@@ -7,7 +7,7 @@
         </div>
         <div class="flex">
             <div class="w-1/2">
-                <img src="{{ $product->image }}" alt="">
+                <img src="/storage/{{ $product->image }}" alt="">
             </div>
             <div class="w-1/2">
                 <h2>{{ $product->title }}</h2>
